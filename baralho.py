@@ -15,7 +15,7 @@ class Carta(Image):
 				self._valor = Carta.KQJ
 			else:
 				self._valor = Carta.A
-		self.file = valor +" of " + self._naipe + ".png"
+		self.file = str(self._valor) +" of " + self._naipe + ".png"
 		self.x = 600
 		self.y = 600
 
