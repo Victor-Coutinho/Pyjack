@@ -3,6 +3,7 @@ from random import shuffle
 
 class Carta(Image):
     
+	'Define as cartas A, K, Q, J com os seus respectivos valores'
 	A = 11
 	KQJ = 10
 	
@@ -42,9 +43,10 @@ class Baralho():
 			for valor in ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q','K']:
 				self.cartas.append(Carta(naipe, valor))
 				
-	def embaralha(self):
+	def embaralha(self) -> None:
+		"""Embaralha as cartas do baralho"""
 		shuffle(self.cartas)
 		
 	def pega_carta_do_topo(self) -> Carta:
-		#carta_removida = self.cartas[-1].file
+		"""Pega uma carta do topo do baralho"""
 		return self.cartas.pop()
