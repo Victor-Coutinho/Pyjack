@@ -8,6 +8,7 @@ class Carta(Image):
 	
 	def __init__(self,naipe: str,valor) -> None:
 		self._naipe = naipe
+		self._nome = valor
 		try:
 			self._valor = int(valor)
 		except:
@@ -15,7 +16,7 @@ class Carta(Image):
 				self._valor = Carta.KQJ
 			else:
 				self._valor = Carta.A
-		self.file = str(self._valor) +" of " + self._naipe + ".png"
+		self.file = str(self.nome) +" of " + self.naipe + ".png"
 		self.x = 600
 		self.y = 600
 
@@ -24,8 +25,14 @@ class Carta(Image):
 		return self._valor
 	
 	@valor.setter
-	def velocidade(self,valor):
+	def valor(self,valor):
 		self._valor = valor
+	@property
+	def naipe(self):
+		return self._naipe
+	@property
+	def nome(self):
+		return self._nome
 
 
 class Baralho():
